@@ -1,5 +1,6 @@
 {
     "files.associations": {
-        "AssignmentOne.C": "cpp"
+        "AssignmentOne.C": "cpp",
+        "xlocale": "cpp"
     }
 }
