@@ -35,8 +35,8 @@ int main()
     printf("Hello World");
 }
 
-// quote one - “Controlling complexity is the essence of computer programming. --Brian Kernighan
-// quote two - “Computer science is no more about computers than astronomy is about telescopes.” --Edsger Dijkstra
+// quote even - “Controlling complexity is the essence of computer programming. --Brian Kernighan
+// quote odd - “Computer science is no more about computers than astronomy is about telescopes.” --Edsger Dijkstra
 
 // thread function for what the thread is going to do
 void *thread_function(void* tid)
@@ -47,6 +47,10 @@ void *thread_function(void* tid)
     {
 
     }
+
+    fptr = fopen("QUOTE.txt", "w"); // opens the QUOTE file
+    
+    fprintf(fptr)
 
     // retrieve the flag
 }
