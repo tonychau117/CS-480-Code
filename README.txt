@@ -2,7 +2,7 @@ File Manifest:
 - AssignmentOne.C
 
 Compile Instructions:
-- Have a working environment of C installed
+- GCC since it is written in C
 
 Operating Instructions:
 -
