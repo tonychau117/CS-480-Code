@@ -6,6 +6,9 @@
 
 #define NUMBER_OF_THREADS 7 // number of threads
 
+#define EVEN_QUOTE
+#define ODD_QUOTE
+
 int main()
 {
     FILE *fptr;
