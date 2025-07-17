@@ -5,6 +5,9 @@
 #include <pthread.h> // import for creating the threads
 #include <stdlib.h> // import for exit() and dynamic memory
 
+
+void *thread_function(void *arg); // function prototype
+
 #define NUMBER_OF_THREADS 7 // number of threads
 #define EVEN_QUOTE "\"Controlling complexity is the essence of computer programming.\" --Brian Kernighan"
 #define ODD_QUOTE "\"Computer science is no more about computers than astronomy is about telescopes.\" --Edsger Dijkstra"
@@ -31,7 +34,7 @@ int main()
     // creating threads
     pthread_t threads[NUMBER_OF_THREADS]; // declares seven threads to use
     for (int i = 0; i < NUMBER_OF_THREADS; i++) {
-    	int *thread_num = malloc(sizeof(int)); // memory allocation
+    	int *thread_num = (int*)malloc(sizeof(int)); // memory allocation
     	*thread_num = i; // assigns thread number
     	if (pthread_create(&threads[i], NULL, thread_function, (void *)thread_num) !=0) { //error check
     		perror("Thread creation failed");

@@ -4,7 +4,7 @@ Names:
 
 Class Accounts:
 - Tony: cssc1414@edoras.sdsu.edu
-- Enrique: 
+- Enrique: cssc1455@edoras.sdsu.edu 
 
 Class Information:
 - CS480-02, Operating Systems Summer 2025
@@ -17,6 +17,7 @@ Name of Current File:
 
 File Manifest:
 - AssignmentOne.C
+- Makefile
 - README.txt
 
 Compile Instructions:
@@ -24,11 +25,12 @@ Compile Instructions:
 
 Operating Instructions:
 - In the terminal, use the following commands in this order to run the C file:
-    - gcc AssignmentOne.c -o test
-    - ./AssignmentOne
+    - make
+    - ./bots
+    - make clean
 
 List/description of novel/significant design decisions:
-- 
+- Uses semaphore to protect QUOTE.txt writes 
 
 List/description of any extra features/algorithms/functionality you included which were not
 required:
