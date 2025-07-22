@@ -1,6 +1,7 @@
 {
     "files.associations": {
         "AssignmentOne.C": "cpp",
-        "xlocale": "cpp"
+        "xlocale": "cpp",
+        "AssignmentTwo.C": "cpp"
     }
 }
