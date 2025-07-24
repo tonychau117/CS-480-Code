@@ -41,5 +41,8 @@ List/description of all known deficiencies or bugs:
 
 Lessons Learned:
 - Some of the lessons learned through this assignment as are follows:
-    - <fill in later>
+    - Creating and understanding how a shell functions
+    - Process management with the usage of fork()
+    - Learning how to implement and execute pipes
+    - Reading user input to determine if it is valid to continue with
     
