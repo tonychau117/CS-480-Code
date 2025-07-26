@@ -13,7 +13,7 @@ int main() {
     bool loop = true; // setting the loop cond
 
     while (loop) { // while loop for "infinite" runtime
-        printf("cssc0000%% "); // prints the cssc of the user
+        printf("cssc1455%% "); // prints the cssc of the user
 
         if (fgets(input, sizeof(input), stdin) == NULL) // reading for user input, 
             break; // exits the loop if it is invalid or error occurs

@@ -16,7 +16,9 @@ Name of Current File:
 - README.txt
 
 File Manifest:
-- AssignmentTwo.C
+- main.C
+- utils.C
+- xsh.h
 - Makefile
 - README.txt
 
@@ -26,11 +28,11 @@ Compile Instructions:
 Operating Instructions:
 - In the terminal, use the following commands in this order to run the C file:
     - make
-    - ./<insert .name here>
+    - ./dsh
     - make clean
 
 List/description of novel/significant design decisions:
-- <fill in later>
+- N/A
 
 List/description of any extra features/algorithms/functionality you included which were not
 required:
