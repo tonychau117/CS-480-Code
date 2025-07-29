@@ -22,6 +22,10 @@ File Manifest:
 - Makefile
 - README.txt
 
+File Contributors:
+- Tony: utils.c, xsh.h
+- Enrique: main.c, Makefile
+
 Compile Instructions:
 - GCC since it is written in C
 
