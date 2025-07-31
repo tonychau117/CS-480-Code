@@ -33,6 +33,8 @@ Operating Instructions:
 - In the terminal, use the following commands in this order to run the C file:
     - make
     - ./dsh
+- After testing exit in the terminal with
+    - exit
     - make clean
 
 List/description of novel/significant design decisions:
