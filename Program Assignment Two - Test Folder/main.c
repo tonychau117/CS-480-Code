@@ -2,6 +2,7 @@
 #include <string.h>
 #include "xsh.h" // header
 #include <stdbool.h> // boolean control
+#include <ctype.h> // for isspace()
 
 #define MAX_LINE 1024 // max length for our lines
 #define MAX_ARGS 64 // max number for the arguments
@@ -25,6 +26,23 @@ int main() {
 
         if (strcmp(input, "exit") == 0)
             break; // user typing "exit" to end the shell itself
+        
+        if (input[0] == '|' || input[strlen(input)-1] == '|') {
+            fprintf(stderr, "Error: pipes cannot be at start or end\n");
+            continue;
+        }
+        
+        int error_found = 0;
+        for (int i = 0; input[i] && !error_found; i++) {
+            if ((input[i] == '|' && input[i+1] == '|') || (isspace(input[i]) && isspace(input[i+1]))) {
+                fprintf(stderr, "Error: invalid pipe/space sequence\n");
+                error_found = 1;
+            }
+        }
+        
+        if (error_found) {
+            continue;
+        }
 
         char *commands[MAX_ARGS]; // holds the commands
         int num_cmds = split_pipes(input, commands); // calls on helper function to check for the # of commands

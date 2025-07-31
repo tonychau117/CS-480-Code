@@ -31,9 +31,14 @@ int split_pipes(char *input, char *commands[]) {
 // helper function for the parsing
 void parse_args(char *command, char **args) {
     int i = 0; // starting point
-    args[i] = strtok(command, " "); // first index in args
+    args[i] = strtok(command, " \t"); // first index in args
     while (args[i] != NULL && i < MAX_ARGS - 1) { // while loop
-        args[++i] = strtok(NULL, " "); // jumps to the next index, splits the string at the next found space
+        i++;
+        args[i] = strtok(NULL, " \t"); // jumps to the next index, splits the string at the next found space
+    }
+    if(i > 2) {
+        fprintf(stderr, "Error: maximum 1 argument allowed\n");
+        args[0] = NULL;
     }
     args[i] = NULL; // NULL signifies the ending
 }
@@ -47,7 +52,7 @@ void execute_single_command(char *command) {
     pid_t pid = fork(); // process id from forking
     if (pid == 0) { // if the process id meets cond of 0
         execvp(args[0], args); // running exec
-        perror("exec failed"); // prints the error msg
+        printf("%s: command not found\n", args[0]); // prints the error msg
         exit(1); // exits bc failed
     } else if (pid > 0) {
         wait(NULL); // waits for process to complete before moving on
@@ -60,8 +65,9 @@ void execute_single_command(char *command) {
 void execute_piped_commands(char *commands[], int num_cmds) {
 
     // declares and initializes two vars to be used - fd for pipe and in_fd for the next command
-    int fd[2] = 0;
+    int fd[2];
     int in_fd = 0;
+    int i;
 
     // loop to run
     for (i = 0; i < num_cmds; ++i) {

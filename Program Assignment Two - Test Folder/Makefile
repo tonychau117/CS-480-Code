@@ -1,6 +1,6 @@
 CC = gcc
 CFLAGS = -Wall -g
-TARGET = dsh
+TARGET = xsh
 
 all: $(TARGET)
 $(TARGET): main.o utils.o
