@@ -1,0 +1,1 @@
+# use a PDF file for the README as it needs to display the graphs
