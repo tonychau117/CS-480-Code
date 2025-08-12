@@ -10,8 +10,7 @@ Class Information:
 - CS480-02, Operating Systems Summer 2025
 
 Assignment Information:
-- Programming Assignment #2: XSH Experimental Shell
-
+- Programming Assignment #3: Memory Allocation and Deallocation
 Name of Current File:
 - README.txt
 
