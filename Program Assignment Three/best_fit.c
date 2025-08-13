@@ -46,7 +46,6 @@ int allocate_mem(int process_id, int num_units) {
         Block* temp = curr; // create a dummy var to find a free slot
         int size = 0; // size of seg
 
-
         while (temp && temp->process_id == -1) { // cond
             size++; // incs our size
             temp = temp->next; // constantly sets temp to the next over while cond is true
@@ -58,11 +57,14 @@ int allocate_mem(int process_id, int num_units) {
         }
 
         // else 
-        if (size > 0)
-            for (int i = 0; i < size; ++i)
+        if (size > 0) {
+            for (int i = 0; i < size; ++i) {
                 curr = curr->next; // omve until cond met
-        else
+            }
+        }
+        else {
             curr = curr->next; // single inc
+        }
     }
 
     if (best_fit_start) {
@@ -102,12 +104,12 @@ int fragment_count() {
                 frag++; // incs
                 temp = temp->next; // reassigns
             }
-            if (frag > 0)
-            {
+            if (frag > 0) {
                 count++; //if frag > 0, inc
             }
-            while (curr && curr->process_id == -1)
+            while (curr && curr->process_id == -1) {
                 curr = curr->next; // reassigns
+            }
         } else {
             curr = curr->next; // reassigns
         }

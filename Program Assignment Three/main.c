@@ -24,8 +24,12 @@ int main() {
         if (type == 0) { // if alloc
             int units = gen_units(); // gens units
             int result = allocate_mem(pid, units); // passes to allic func
-            if (result == -1) denied++; // if unsuccessful alloc inc denied
-            else traversal_sum += result; // else up results
+            if (result == -1) { 
+                denied++; // if unsuccessful alloc inc denied
+            }
+            else {
+                traversal_sum += result; // else up results
+            }
         } else {
             deallocate_mem(pid); // if not 0, then 1 -> dealloc
         }

@@ -89,12 +89,12 @@ int fragment_count() {
                 frag++; // counts free blocks and inc frags if so
                 temp = temp->next; // sets temp to next
             }
-            if (frag > 0) 
-            {
+            if (frag > 0) {
                 count++; // if frag size > 0, inc count
             }
-            while (curr && curr->process_id == -1)
+            while (curr && curr->process_id == -1) {
                 curr = curr->next; // skips
+            }
         } else {
             curr = curr->next; // moves to next
         }
