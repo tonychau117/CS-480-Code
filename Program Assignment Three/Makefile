@@ -1,16 +1,25 @@
 # Tony Chau, Enrique Rodriguez
 
 CC = gcc
-CFLAGS = -Wall -g
-OBJS = main.o first_fit.o request.o stats.o
+CFLAGS = -Wall -Wextra -std=c99 -g
 
-sim: $(OBJS)
-	$(CC) -o sim $(OBJS)
+# SWITCH BETWEEN FIRST OR BEST FIT HERE
+SRC = main.c first_fit.c
+#SRC = main.c best_fit.c
 
-main.o: main.c memory.h
-first_fit.o: first_fit.c memory.h
-request.o: request.c
-stats.o: stats.c
+OBJ = $(SRC:.c=.o)
+TARGET = sim
+
+all: $(TARGET)
+
+$(TARGET): $(OBJ)
+	$(CC) $(CFLAGS) -o $@ $^
+
+%.o: %.c
+	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	rm -f *.o sim
+	rm -f $(OBJ) $(TARGET)
+
+rebuild: clean all
+
