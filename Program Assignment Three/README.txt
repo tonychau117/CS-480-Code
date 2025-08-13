@@ -57,4 +57,12 @@ Lessons Learned:
     - Learning how a memory allocation and deallocation works
     - Understanding the difference between first_fit and best_fit
     - Fragment checking
-    
+
+Graphs:
+-
+
+Background of description of the algorithms, simulation set-up, parameters, anything interesting to know about how this simulation system is designed and configuration settings you have included:
+-
+
+Findings that describe what the output is telling the reader.  what conclusions can be made from this simulation run with this data set.  recommendations for additional simulation runs you would recommend from this assignment:
+-
