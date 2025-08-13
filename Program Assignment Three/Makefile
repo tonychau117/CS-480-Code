@@ -1,3 +1,5 @@
+# Tony Chau, Enrique Rodriguez
+
 CC = gcc
 CFLAGS = -Wall -g
 OBJS = main.o first_fit.o request.o stats.o

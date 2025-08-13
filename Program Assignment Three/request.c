@@ -1,3 +1,5 @@
+// Tony Chau, Enrique Rodriguez
+
 #include <stdlib.h>
 
 int gen_pid() {

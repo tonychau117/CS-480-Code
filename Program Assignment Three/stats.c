@@ -1,3 +1,5 @@
+// Tony Chau, Enrique Rodriguez
+
 #include <stdio.h>
 
 // stat func

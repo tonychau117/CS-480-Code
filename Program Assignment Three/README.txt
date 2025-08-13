@@ -17,7 +17,6 @@ Name of Current File:
 - README.txt
 
 File Manifest:
-
 - best_fit.C
 - first_fit.C
 - main.C
@@ -28,8 +27,8 @@ File Manifest:
 - README.txt
 
 File Contributors:
-- Tony: 
-- Enrique: 
+- Tony: best_fit.C, main.C, stats.C, memory.h
+- Enrique: first_fit.C, request.C, main.C, Makefile 
 
 Compile Instructions:
 - GCC since it is written in C

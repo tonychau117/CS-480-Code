@@ -1,4 +1,4 @@
-// header
+// header, Tony Chau, Enrique Rodriguez
 #ifndef MEMORY_H
 #define MEMORY_H
 
