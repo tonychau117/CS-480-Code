@@ -34,7 +34,8 @@ void reset_memory() {
 }
 
 int allocate_mem(int process_id, int num_units) {
-    Block *start = memory, *curr = memory; // creates var for beginning of list and the ptr
+    Block *start = memory;
+    Block *curr = memory; // creates var for beginning of list and the ptr
     int count = 0; // sets to 0 for default
     int traversed = 0; // sets to 0 for default
 
@@ -86,7 +87,10 @@ int fragment_count() {
                 frag++; // counts free blocks and inc frags if so
                 temp = temp->next; // sets temp to next
             }
-            if (frag > 0) count++; // if frag size > 0, inc count
+            if (frag > 0) 
+            {
+                count++; // if frag size > 0, inc count
+            }
             while (curr && curr->process_id == -1)
                 curr = curr->next; // skips
         } else {

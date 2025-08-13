@@ -34,7 +34,8 @@ void reset_memory() {
 }
 
 int allocate_mem(int process_id, int num_units) {
-    Block *curr = memory, *best_fit_start = NULL; // traversal
+    Block *curr = memory; // traversal
+    Block *best_fit_start = NULL; 
     int traversed = 0; // count for amt traversed
     int best_fit_size = MEMORY_SIZE + 1; // init size of best fit
 
@@ -99,7 +100,10 @@ int fragment_count() {
                 frag++; // incs
                 temp = temp->next; // reassigns
             }
-            if (frag > 0) count++; //if frag > 0, inc
+            if (frag > 0)
+            {
+                count++; //if frag > 0, inc
+            }
             while (curr && curr->process_id == -1)
                 curr = curr->next; // reassigns
         } else {
