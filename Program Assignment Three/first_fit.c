@@ -36,7 +36,7 @@ void reset_memory() {
 }
 
 int allocate_mem(int process_id, int num_units) {
-    Block *start = memory;
+    //Block *start = memory;
     Block *curr = memory; // creates var for beginning of list and the ptr
     int count = 0; // sets to 0 for default
     int traversed = 0; // sets to 0 for default
@@ -77,24 +77,23 @@ int deallocate_mem(int process_id) {
 }
 
 int fragment_count() {
-    Block* curr = memory; // starting from beginnong again
+    Block* curr = memory; // starting from beginning again
     int count = 0; // sets to 0 for default
-    int frag = 0; // sets to 0 for default
 
     while (curr) {
         if (curr->process_id == -1) { // if free
-            frag = 0; // resets frag
+            int run = 0; // length of run
             Block* temp = curr; // temp var gest curr pos
-            for (int i = 0; i < 2 && temp && temp->process_id == -1; ++i) {
-                frag++; // counts free blocks and inc frags if so
+            while (temp && temp->process_id == -1) {
+                run++; // increase run length 
                 temp = temp->next; // sets temp to next
             }
-            if (frag > 0) {
-                count++; // if frag size > 0, inc count
+            
+            if (run ==1 || run == 2){ // only count holes of 1 or 2
+                count++;
             }
-            while (curr && curr->process_id == -1) {
-                curr = curr->next; // skips
-            }
+            curr = temp;
+            
         } else {
             curr = curr->next; // moves to next
         }

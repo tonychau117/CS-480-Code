@@ -93,26 +93,26 @@ int deallocate_mem(int process_id) {
 }
 
 int fragment_count() {
-    Block* curr = memory; // origin
-    int count = 0; // ctr
+    Block* curr = memory; // starting from beginning again
+    int count = 0; // sets to 0 for default
 
     while (curr) {
         if (curr->process_id == -1) { // if free
-            int frag = 0; // frag ctr
-            Block* temp = curr; // temp var to move throughout
-            for (int i = 0; i < 2 && temp && temp->process_id == -1; ++i) {
-                frag++; // incs
-                temp = temp->next; // reassigns
+            int run = 0; // length of run
+            Block* temp = curr; // temp var gest curr pos
+            while (temp && temp->process_id == -1) {
+                run++; // increase run length 
+                temp = temp->next; // sets temp to next
             }
-            if (frag > 0) {
-                count++; //if frag > 0, inc
+            
+            if (run ==1 || run == 2){ // only count holes of 1 or 2
+                count++;
             }
-            while (curr && curr->process_id == -1) {
-                curr = curr->next; // reassigns
-            }
+            curr = temp;
+            
         } else {
-            curr = curr->next; // reassigns
+            curr = curr->next; // moves to next
         }
     }
-    return count; // returns count
+    return count; // return totla #
 }

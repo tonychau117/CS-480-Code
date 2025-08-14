@@ -3,10 +3,17 @@
 CC = gcc
 CFLAGS = -Wall -Wextra -std=c99 -g
 
-# SWITCH BETWEEN FIRST OR BEST FIT HERE
-SRC = main.c first_fit.c
-#SRC = main.c best_fit.c
+TECH ?= ff
 
+ifeq ($(TECH),ff)
+FIT_SRC = first_fit.c
+else ifeq ($(TECH),bf)
+FIT_SRC = best_fit.c
+else
+$(error TECH must be ff or bf)
+endif
+
+SRC = main.c request.c stats.c $(FIT_SRC)
 OBJ = $(SRC:.c=.o)
 TARGET = sim
 
@@ -19,7 +26,15 @@ $(TARGET): $(OBJ)
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	rm -f $(OBJ) $(TARGET)
+	$(RM) *.o $(TARGET)
+
+ff:
+	 $(MAKE) clean
+	 $(MAKE) TECH=ff
+
+bf:
+	 $(MAKE) clean
+	 $(MAKE) TECH=bf
 
 rebuild: clean all
 

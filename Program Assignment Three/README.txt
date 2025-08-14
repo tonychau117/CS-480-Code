@@ -35,21 +35,23 @@ Compile Instructions:
 
 Operating Instructions:
 - In the terminal, use the following commands in this order to run the C file:
-    - make
+    - make ff
+    - ./sim
+    - make bf
     - ./sim
 - After testing exit in the terminal with
-    - exit
     - make clean
+    - exit
 
 List/description of novel/significant design decisions:
 - N/A
 
 List/description of any extra features/algorithms/functionality you included which were not
 required:
-- N/A
+- The inclusion of a linked list structure
 
 List/description of all known deficiencies or bugs:
-- N/A
+- Only one “fit” can be ran at a time
 
 Lessons Learned:
 - Some of the lessons learned through this assignment as are follows:
@@ -58,10 +60,10 @@ Lessons Learned:
     - Fragment checking
 
 Graphs:
--
+- Provided by the readme pdf on canvas
 
 Background of description of the algorithms, simulation set-up, parameters, anything interesting to know about how this simulation system is designed and configuration settings you have included:
--
+- Provided by the readme pdf on canvas
 
 Findings that describe what the output is telling the reader.  what conclusions can be made from this simulation run with this data set.  recommendations for additional simulation runs you would recommend from this assignment:
--
+- Provided by the readme pdf on canvas
